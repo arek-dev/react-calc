@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSelector } from "react-redux";
+import FirstRow from "./component/FirstRow";
+import SecondRow from "./component/SecondRow";
+import ThirdRow from "./component/ThirdRow";
+import FourthRow from "./component/FourthRow";
+import FifthRow from "./component/FifthRow";
+
+import '../src/sass/main.scss';
+
+const Display = (props) => {
+
+  const display = useSelector((state) => state.displayValue.value);
+
+  return (
+    <div className="calc__result">
+      {display}
+    </div>
+  )
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="calc">
+        <Display />
+        <FirstRow />
+        <SecondRow />
+        <ThirdRow />
+        <FourthRow />
+        <FifthRow />
+      </div>
     </div>
   );
 }

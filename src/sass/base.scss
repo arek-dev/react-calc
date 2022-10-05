@@ -1,0 +1,85 @@
+$bp-largest: 93.75em; // 1500px
+$bp-large: 75em; //1200px
+$bp-medium: 56.25em; //900px
+$bp-small: 48em; //768px
+$bp-smallest: 31.25em; //500px
+
+$color-grey-light: #8e8e8e;
+$color-grey-medium: #464646;
+$color-grey-medium-dark: #323232;
+$color-grey-dark: rgb(7, 7, 7);
+$color-orange: #ff9d00;
+
+$font-lato: 'Lato', sans-serif;
+
+
+* {
+    margin: 0;
+    padding: 0;   
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    
+    font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 55%;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 45%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 35%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        font-size: 30%;
+    }
+}
+
+body {
+    font-family: $font-lato;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    color: #fff;
+}
+
+
+.mb-xs {
+    margin-bottom: 1rem;
+}
+
+
+.mb-sm {
+    margin-bottom: 2rem;
+}
+
+
+.mb-md {
+    margin-bottom: 3rem;
+}
+
+
+.mb-lg {
+    margin-bottom: 5rem;
+}
+
+
+.mb-xl {
+    margin-bottom: 8rem;
+}
+
+.mr-auto {
+    margin-right: auto;
+   
+}

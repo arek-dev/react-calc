@@ -1,0 +1,249 @@
+@use "./base.scss";
+
+.container {   
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right bottom, rgba(7, 39, 50, 0.773), rgba(8, 56, 76, 0.753)), 
+                      linear-gradient(to right bottom, rgba(10, 11, 13, 0.926), rgba(23, 22, 28, 0.939));
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+   
+    width: 100vw;
+    height: 100vh;    
+}
+
+.calc {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 50%;
+    font-size: 5rem;
+    font-weight: 300;
+    cursor: pointer;  
+    user-select: none;
+    border: 3px solid rgb(96, 96, 96);
+
+    &__result {
+        grid-column: 1 / 5;
+        display: flex;
+        align-content: center;
+        justify-content: end;
+        padding-right: 2rem; 
+        font-size: 7rem;
+        background-color: $color-grey-medium-dark;
+        border: 1px solid rgb(96, 96, 96);
+    }
+
+    &__firstrow {
+        grid-column: 1 / 5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        &-ac {
+            grid-column: 1 / 4;
+            background-color: $color-grey-medium;
+            display: flex;
+            justify-content: center;
+            border: 1px solid rgb(96, 96, 96);
+
+            &:hover {
+                background-color: darken($color-grey-medium, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-grey-medium, 20%);
+            }
+        }
+
+        &-divide {
+            grid-column: 4 / 5;
+            background-color: $color-orange;
+            display: flex;
+            justify-content: center;
+            border: 1px solid rgb(96, 96, 96);
+
+            &:hover {
+                background-color: darken($color-orange, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-orange, 20%);
+            }
+        }
+    }
+
+    &__secondrow {
+        grid-column: 1 / 5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        
+        &-7,
+        &-8,
+        &-9,
+        &-multiply {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(96, 96, 96);   
+                   
+        }
+
+        &-7,
+        &-8,
+        &-9 {
+            background-color: $color-grey-light;
+
+            &:hover {
+                background-color: darken($color-grey-light, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-grey-light, 20%);
+            }
+        }
+
+        &-multiply {
+            background-color: $color-orange;
+
+            &:hover {
+                background-color: darken($color-orange, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-orange, 20%);
+            }
+        }
+    }
+    
+
+    &__thirdrow {
+        grid-column: 1 / 5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        &-4,
+        &-5,
+        &-6,
+        &-minus {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(96, 96, 96);
+        }
+
+        &-4,
+        &-5,
+        &-6 {
+            background-color: $color-grey-light;
+
+            &:hover {
+                background-color: darken($color-grey-light, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-grey-light, 20%);
+            }
+        }
+
+        &-minus {
+            background-color: $color-orange;
+
+            &:hover {
+                background-color: darken($color-orange, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-orange, 20%);
+            }
+        }
+    }
+
+    &__fourthrow {
+        grid-column: 1 / 5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);        
+
+        &-1,
+        &-2,
+        &-3,
+        &-plus {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(96, 96, 96);
+        }
+
+        &-1,
+        &-2,
+        &-3 {
+            background-color: $color-grey-light;
+
+            &:hover {
+                background-color: darken($color-grey-light, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-grey-light, 20%);
+            }
+        }
+
+        &-plus {
+            background-color: $color-orange;
+
+            &:hover {
+                background-color: darken($color-orange, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-orange, 20%);
+            }
+        }
+    }
+    
+    &__fifthrow {
+        grid-column: 1 / 5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        &-0 {
+            grid-column: 1 / 3;
+        }
+
+        &-0,
+        &-colon,
+        &-equal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(96, 96, 96);
+        }
+
+        &-0,
+        &-colon {
+            background-color: $color-grey-light;
+
+            &:hover {
+                background-color: darken($color-grey-light, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-grey-light, 20%);
+            }
+        }
+
+        &-equal {
+            background-color: $color-orange;
+
+            &:hover {
+                background-color: darken($color-orange, 5%);
+            }
+
+            &:active {
+                background-color: darken($color-orange, 20%);
+            }
+        }
+    }
+}
