@@ -5,24 +5,38 @@ import { update7, update8, update9, operationMultiply } from "../redux/displaySl
 const SecondRow = () => { 
     const display = useSelector((state) => state.displayValue.display);
     const dispatch = useDispatch();
+    
+
+    window.addEventListener("keyup", (event) => {
+      if (event.key === "7") {
+        handleClick7();
+        return;        
+      } else if (event.key === "8") {
+        handleClick8();
+        return; 
+      } else if (event.key === "9") {
+        handleClick9();
+        return; 
+      } else if (event.key === "*") {
+        handleMultiply();
+        return; 
+      }
+      event.preventDefault();
+    });
   
     const handleClick7 = (e) => {
-    e.preventDefault();
     dispatch(update7(display))  
     }
   
     const handleClick8 = (e) => {
-      e.preventDefault();
       dispatch(update8(display))  
     }
   
     const handleClick9 = (e) => {
-      e.preventDefault();
       dispatch(update9(display))  
     }
   
     const handleMultiply = (e) => {
-      e.preventDefault();
       dispatch(operationMultiply())  
     }
   

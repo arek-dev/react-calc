@@ -5,19 +5,33 @@ import { update0, updateColon, operationEqual } from "../redux/displaySlice";
 const FifthRow = () => { 
     const display = useSelector((state) => state.displayValue.display);
     const dispatch = useDispatch();
+
+
+    window.addEventListener("keyup", (event) => {
+      if (event.key === "0") {
+        handleClick0();
+        return;        
+      } else if (event.key === ".") {
+        handleClickColon();
+        return; 
+      } else if (event.key === "Enter" || event.key === "=") {
+        handleEqual();
+        return; 
+      }
+      event.preventDefault();
+    });
+
+    
   
     const handleClick0 = (e) => {
-    e.preventDefault();
     dispatch(update0(display))  
     }
   
     const handleClickColon = (e) => {
-      e.preventDefault();
       dispatch(updateColon(display))  
     }
   
     const handleEqual = (e) => {
-      e.preventDefault();
       dispatch(operationEqual())  
     }
   

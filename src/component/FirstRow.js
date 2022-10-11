@@ -4,14 +4,25 @@ import { operationDivide, operationCancel } from "../redux/displaySlice";
 
 const FirstRow = () => { 
     const dispatch = useDispatch();
+
+
+    window.addEventListener("keyup", (event) => {
+      if (event.key === "Escape") {
+        handleCancel();
+        return;        
+      } else if (event.key === "/") {
+        handleDivide();
+        return; 
+      } 
+      event.preventDefault();
+    });
+
   
     const handleCancel = (e) => {
-      e.preventDefault();
       dispatch(operationCancel())  
     }
   
     const handleDivide = (e) => {
-      e.preventDefault();
       dispatch(operationDivide())  
     }
   

@@ -5,24 +5,39 @@ import { update4, update5, update6, operationMinus } from "../redux/displaySlice
 const ThirdRow = () => { 
     const display = useSelector((state) => state.displayValue.display);
     const dispatch = useDispatch();
+
+
+    window.addEventListener("keyup", (event) => {
+      if (event.key === "4") {
+        handleClick4();
+        return;        
+      } else if (event.key === "5") {
+        handleClick5();
+        return; 
+      } else if (event.key === "6") {
+        handleClick6();
+        return; 
+      } else if (event.key === "-") {
+        handleMinus();
+        return; 
+      }
+      event.preventDefault();
+    });
+
   
     const handleClick4 = (e) => {
-    e.preventDefault();
     dispatch(update4(display))  
     }
   
     const handleClick5 = (e) => {
-      e.preventDefault();
       dispatch(update5(display))  
     }
   
     const handleClick6 = (e) => {
-      e.preventDefault();
       dispatch(update6(display))  
     }
   
     const handleMinus = (e) => {
-      e.preventDefault();
       dispatch(operationMinus())  
     }
   
